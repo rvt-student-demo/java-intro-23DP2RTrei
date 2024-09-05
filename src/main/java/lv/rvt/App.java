@@ -6,22 +6,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        Scanner scanner = new Scanner(System.in);
+        int wholeNumber = 123;
+        double deci = 3.141592653;
+        boolean trueOrFalse = true;
+
+        System.out.println("Chicken: ");
+        System.out.println(wholeNumber);
+        System.out.println("becon (kg): ");
+        System.out.println(deci);
+        System.out.println("Tractor");
+
+        System.out.println();
         
-        //Mes gribam uzinat no lietotaja vaaru uzvardu uzardu un grupu
-
-        //Un beigās printet visu rindiņā izmantoot string savienošanu
-        System.out.println("Ievadiet savu vārdu: ");
-        String name = scanner.nextLine();
-
-        System.out.println("Ievadiet savu uzvardu: ");
-        String uz = scanner.nextLine();
-
-        System.out.println("Ievaiet savu grupu: ");
-        String grupa = scanner.nextLine();
-
-        System.out.println(name + " " + uz + " " + grupa);
-
     }
 
 }
