@@ -11,7 +11,16 @@ public class App
         //Mes gribam uzinat no lietotaja vaaru uzvardu uzardu un grupu
 
         //Un beigās printet visu rindiņā izmantoot string savienošanu
+        System.out.println("Ievadiet savu vārdu: ");
+        String name = scanner.nextLine();
 
+        System.out.println("Ievadiet savu uzvardu: ");
+        String uz = scanner.nextLine();
+
+        System.out.println("Ievaiet savu grupu: ");
+        String grupa = scanner.nextLine();
+
+        System.out.println(name + " " + uz + " " + grupa);
 
     }
 
