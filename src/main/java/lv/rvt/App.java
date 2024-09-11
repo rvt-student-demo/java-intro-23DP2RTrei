@@ -1,28 +1,25 @@
 package lv.rvt; //klases atrasanas vieta projekta
 
-import java.util.Scanner;
+import java.util.*;
 
 public class App 
 {
     public static void main( String[] args )
     {
-        int wholeNumber = 3;
-        double deci = 5.5;
-        String Tractor = "None!";
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Chicken: ");
-        System.out.println(wholeNumber);
-        System.out.println("becon (kg): ");
-        System.out.println(deci);
-        System.out.println("Tractor");
-        System.out.println(Tractor);
+        System.out.println("Ievdiet savu vārdu: ");
+        String name = scanner.nextLine();
 
-        System.out.println();
+        System.out.println("Ievadiet savu uzvārdu:");
+        String lastname = scanner.nextLine();
+
+        System.out.println("Ievadiet savu grupu");
+        String group = scanner.nextLine();
+
+
+        System.out.println("Students: " +  name + " " + lastname + ", grupa: " + group );
         
-        System.out.println("And finally, a summary");
-        System.out.println(wholeNumber);
-        System.out.println(deci);
-        System.out.println(Tractor);
     }
 
 }
