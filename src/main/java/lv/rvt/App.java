@@ -8,6 +8,7 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Give points [0-100]");
         int number = Integer.valueOf(scanner.nextLine());
 
         if (number < 0) {
