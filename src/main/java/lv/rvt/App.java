@@ -8,17 +8,30 @@ public class App
     {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ievdiet savu vārdu: ");
-        String name = scanner.nextLine();
+        int number = Integer.valueOf(scanner.nextLine());
 
-        System.out.println("Ievadiet savu uzvārdu:");
-        String lastname = scanner.nextLine();
-
-        System.out.println("Ievadiet savu grupu");
-        String group = scanner.nextLine();
-
-
-        System.out.println("Students: " +  name + " " + lastname + ", grupa: " + group );
+        if (number < 0) {
+            System.out.println("Grade: impossible!");
+        } else if (number < 50) {
+            System.out.println("Grade: failed.");
+        } else if (number < 60 ) {
+            System.out.println("Grade: 1");
+        } else if (number < 70 ) {
+            System.out.println("Grade: 2");
+        }
+        else if (number < 80 ) {
+            System.out.println("Grade: 3");
+        }
+        else if (number < 90 ) {
+            System.out.println("Grade: 4");
+        }
+        else if (number < 100 ) {
+            System.out.println("Grade: 5");
+        }
+        else if (number > 100 ) {
+            System.out.println("Grade: icredable");
+        }
+        
         
     }
 
