@@ -6,20 +6,16 @@ public class App
 {
 
     public static void main(String[] args){
-    Scanner scan = new Scanner(System.in);
-    System.out.println("Give me a number: ");
-    int num = scan.nextInt();
-    int count = 0;
-    int sum = num;
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Ievadiet skaitli: ");
+    int fac = Integer.valueOf(scanner.nextLine());
+    int facSum = 1;
 
-    while (num != 0) {
-        System.out.println("Give me a number: ");
-        num = scan.nextInt();
-        count++;
-        sum += num;
+    for (int i = 1; i <= fac; i++) {
+        facSum = facSum * i;
+
     }
-    System.out.println("Number of numbers: " + count );
-    System.out.println("Sum of the numbers: " + sum );
-        
+    System.out.println(facSum);
     }
 }
