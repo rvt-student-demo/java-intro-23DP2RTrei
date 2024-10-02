@@ -7,15 +7,23 @@ public class App
 
     public static void main(String[] args){
     Scanner scanner = new Scanner(System.in);
-    
+    int sum = 0;
     System.out.println("Ievadiet skaitli: ");
-    int fac = Integer.valueOf(scanner.nextLine());
-    int facSum = 1;
+    int i = scanner.nextInt();
+    int numnum = 0;
+    float avg = 0;
+    while (i!=-1) {
 
-    for (int i = 1; i <= fac; i++) {
-        facSum = facSum * i;
-
+        int num = scanner.nextInt();
+        sum = sum + i; 
+        i = num;
+        numnum += 1;
+        avg = sum / numnum;
     }
-    System.out.println(facSum);
+    
+    System.out.println("Thx! Bye!");
+    System.out.println("Sum: " + sum);
+    System.out.println("Numbers: " + numnum);
+    System.out.println("Average: " + avg);
     }
 }
