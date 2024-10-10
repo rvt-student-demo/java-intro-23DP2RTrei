@@ -5,21 +5,14 @@ import java.util.*;
 public class App 
 {
 
-        public static void main(String[] args){
-            divByThree(2, 10); 
-        }
+    public static void main(String[] args) {
+        //Piemēram ka mēs izsuacam
+        //Metodes no star klases
+        Stars.printStars(3);
+        Stars.printSquare(4);
 
-        public static void divByThree(int begin, int end) {
-            while (begin<=end) {
-                if (begin%3 == 0){
-                    System.out.println(begin);
-                }
-                else{
-                    begin++;
-                    continue;
-                }
-                begin += 3;
-            }
-        
+        Stars.printRectangle(17,3);
+
+        Stars.prinTriangle(4);
     }
 }
