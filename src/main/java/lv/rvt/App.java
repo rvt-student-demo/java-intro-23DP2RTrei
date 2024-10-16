@@ -4,15 +4,25 @@ import java.util.*;
 
 public class App 
 {
-
     public static void main(String[] args) {
-        //Piemēram ka mēs izsuacam
-        //Metodes no star klases
-        Stars.printStars(3);
-        Stars.printSquare(4);
-
-        Stars.printRectangle(17,3);
-
-        Stars.prinTriangle(4);
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+        while (true) {
+            System.out.print("Ievadiet skaitli: ");
+            int num = scanner.nextInt();
+            if (num == 0) {
+                break; 
+            }
+            numbers.add(num); 
+        }
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        } 
+        System.out.println("Summa ir: " + sum);
+    
+    
     }
+
+    
 }
