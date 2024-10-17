@@ -7,43 +7,36 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
-        int i = rand.nextInt(10) + 1; 
+        int i = rand.nextInt(10) + 1;
+        int score = 5;
 
         System.out.println("I am thinking of a number from 1 to 10.");
-        System.out.println("You must guess what it is in three tries.");
+        System.out.println("Try to guess the number.");
+        System.out.println("Your beginning score is 5 points.");
+        System.out.println("Each time you guess wrong, your score is decreased by one.");
 
-        int tries = 0;
-        boolean won = false;
-
-        while (tries < 3) {
+        while (score >= 0) {
             System.out.print("Enter a guess: ");
             int guess = scanner.nextInt();
             
             if (guess == i) {
-                System.out.println("RIGHT!");
-                System.out.println("You have won the game!");
-                won = true;
-                break; 
+                System.out.println("You WON the game!");
+                System.out.println("Your score is " + score);
+                break;
             } else {
-
-                int difference = Math.abs(i - guess);
-
-                if (difference >= 3) {
-                    System.out.println("cold");
-                } else if (difference == 2) {
-                    System.out.println("warm");
-                } else if (difference == 1) {
-                    System.out.println("hot");
-                }
+                score--;
                 
-                System.out.println("Wrong!");
+                if (guess < i) {
+                    System.out.println("Too Low! Your score is now " + score);
+                } else {
+                    System.out.println("Too High! Your score is now " + score);
+                }
             }
-            tries++;
-        }
 
-        if (!won) {
-            System.out.println("The correct number was " + i + ".");
-            System.out.println("You have lost the game!");
+            if (score < 0) {
+                System.out.println("You lost.");
+                System.out.println("Your score is 0.");
+            }
         }
     }
 }
