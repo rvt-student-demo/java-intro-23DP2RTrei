@@ -7,17 +7,21 @@ import lv.rvt.Person;
 import lv.rvt.Room;
 import lv.rvt.Product;
 import lv.rvt.Agent;
+import lv.rvt.Statistics;
 public class App 
 {
+
+        
     public static void main(String[] args) {
-
-        Agent bond = new Agent("Bond", "James");
-
-        bond.toString();
-        System.out.println(bond);
-
-        Agent ionic = new Agent("Iconic", "Bond");
-        System.out.println(ionic);
+         Statistics statistics = new Statistics();
+        statistics.addNumber(3);
+        statistics.addNumber(5);
+        statistics.addNumber(1);
+        statistics.addNumber(2);
+        System.out.println("Count: " + statistics.getCount());
+            
+        
+        
     }
 
 }
