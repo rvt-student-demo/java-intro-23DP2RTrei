@@ -6,23 +6,18 @@ import lv.rvt.Account;
 import lv.rvt.Person;
 import lv.rvt.Room;
 import lv.rvt.Product;
+import lv.rvt.Agent;
 public class App 
 {
-
     public static void main(String[] args) {
-        DecreasingCounter counter = new DecreasingCounter(2);
-        
-        counter.printValue();
 
-        counter.decrement();
-        counter.printValue();
-        
-        counter.decrement();
-        counter.printValue();
-        
-        counter.decrement();
-        counter.printValue();
+        Agent bond = new Agent("Bond", "James");
+
+        bond.toString();
+        System.out.println(bond);
+
+        Agent ionic = new Agent("Iconic", "Bond");
+        System.out.println(ionic);
     }
-
 
 }
