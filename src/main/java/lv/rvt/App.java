@@ -13,20 +13,34 @@ public class App
 
         
     public static void main(String[] args) {
-        Statistics stats = new Statistics();
+        Statistics allNumbers = new Statistics();
+        Statistics evenNumbers = new Statistics();
+        Statistics oddNumbers = new Statistics();
+        
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter numbers:");
 
         while (true) {
-            System.out.println("Enter numbers:");
             int number = scanner.nextInt();
 
             if (number == -1) {
                 break;
             }
-            stats.addNumber(number);
+
+            allNumbers.addNumber(number);
+
+            if (number % 2 == 0) {
+                evenNumbers.addNumber(number);
+            } else {
+                oddNumbers.addNumber(number);
+            }
         }
 
-        System.out.println("Sum:" + stats.sum());
+        // Print the results
+        System.out.println("Sum: " + allNumbers.sum());
+        System.out.println("Sum of even numbers: " + evenNumbers.sum());
+        System.out.println("Sum of odd numbers: " + oddNumbers.sum());
+        
         scanner.close();
 
     }
