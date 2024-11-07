@@ -13,14 +13,22 @@ public class App
 
         
     public static void main(String[] args) {
-        Statistics statistics = new Statistics();
-        statistics.addNumber(3);
-        statistics.addNumber(5);
-        statistics.addNumber(1);
-        statistics.addNumber(2);
-        System.out.println("Count: " + statistics.getCount());
-        System.out.println("Sum: " + statistics.sum());
-        System.out.println("Average: " + statistics.average());
+        Statistics stats = new Statistics();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Enter numbers:");
+            int number = scanner.nextInt();
+
+            if (number == -1) {
+                break;
+            }
+            stats.addNumber(number);
+        }
+
+        System.out.println("Sum:" + stats.sum());
+        scanner.close();
+
     }
 
 }
