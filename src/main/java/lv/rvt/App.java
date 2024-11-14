@@ -1,48 +1,31 @@
 package lv.rvt;
-
 import java.util.*;
 import java.io.*;
-import lv.rvt.Account;
-import lv.rvt.Person;
-import lv.rvt.Room;
-import lv.rvt.Product;
-import lv.rvt.Agent;
-import lv.rvt.Statistics;
-public class App 
-{
 
-        
-    public static void main(String[] args) {
-        Statistics allNumbers = new Statistics();
-        Statistics evenNumbers = new Statistics();
-        Statistics oddNumbers = new Statistics();
-        
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter numbers:");
-
-        while (true) {
-            int number = scanner.nextInt();
-
-            if (number == -1) {
-                break;
-            }
-
-            allNumbers.addNumber(number);
-
-            if (number % 2 == 0) {
-                evenNumbers.addNumber(number);
-            } else {
-                oddNumbers.addNumber(number);
-            }
+public class App {
+    public static void main(String[] args) throws Exception {
+        ArrayList<Person> personList = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new FileReader("/workspaces/java-intro-23DP2RTrei/src/main/resources/persons.csv"));
+        String line;
+        reader.readLine();
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            String name = parts[0].trim();
+            int age = Integer.parseInt(parts[1].trim());
+            int weight = Integer.parseInt(parts[2].trim());
+            int height = Integer.parseInt(parts[3].trim());
+            Person person = new Person(name, age, weight, height);
+            personList.add(person);
         }
-
-        // Print the results
-        System.out.println("Sum: " + allNumbers.sum());
-        System.out.println("Sum of even numbers: " + evenNumbers.sum());
-        System.out.println("Sum of odd numbers: " + oddNumbers.sum());
-        
-        scanner.close();
-
+        reader.close();
+        for (Person person : personList) {
+            System.out.println("Name: " + person.getName() + ", Age: " + person.getAge() + ", Weight: " + person.getWeight() + ", Height: " + person.getHeight());
+        }
+        int totalAge = 0;
+        for (Person person : personList) {
+            totalAge += person.getAge();
+        }
+        double averageAge = totalAge / (double) personList.size();
+        System.out.println("Average Age: " + averageAge);
     }
-
 }
