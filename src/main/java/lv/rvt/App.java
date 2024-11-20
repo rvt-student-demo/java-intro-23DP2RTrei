@@ -5,7 +5,7 @@ import java.io.*;
 public class App {
     public static void main(String[] args) throws Exception {
         ArrayList<Person> personList = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader("/workspaces/java-intro-23DP2RTrei/src/main/resources/persons.csv"));
+        BufferedReader reader = Helper.getReader("persons.csv");
         String line;
         reader.readLine();
         while ((line = reader.readLine()) != null) {
