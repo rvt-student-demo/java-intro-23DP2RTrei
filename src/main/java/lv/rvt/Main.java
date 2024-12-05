@@ -1,47 +1,24 @@
 package lv.rvt;
 
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
-        PaymentCard petesCard = new PaymentCard(10);
-        System.out.println("money: " + petesCard.balance());
-        boolean wasSuccessful = petesCard.takeMoney(8);
-        System.out.println("successfully withdrew: " + wasSuccessful);
-        System.out.println("money: " + petesCard.balance());
-
-        wasSuccessful = petesCard.takeMoney(4);
-        System.out.println("successfully withdrew: " + wasSuccessful);
-        System.out.println("money: " + petesCard.balance());
-
-        PaymentTerminal unicafeExactum = new PaymentTerminal();
-        System.out.println(unicafeExactum);
-
-        double change = unicafeExactum.eatAffordably(10);
-        System.out.println("remaining change: " + change);
-
-        change = unicafeExactum.eatAffordably(5);
-        System.out.println("remaining change: " + change);
-
-        change = unicafeExactum.eatHeartily(4.3);
-        System.out.println("remaining change: " + change);
-
-        System.out.println(unicafeExactum);
-
-        PaymentCard annesCard = new PaymentCard(7);
-        wasSuccessful = unicafeExactum.eatHeartily(annesCard);
-        System.out.println("there was enough money: " + wasSuccessful);
-
-        wasSuccessful = unicafeExactum.eatHeartily(annesCard);
-        System.out.println("there was enough money: " + wasSuccessful);
-
-        wasSuccessful = unicafeExactum.eatAffordably(annesCard);
-        System.out.println("there was enough money: " + wasSuccessful);
-
-        System.out.println("amount of money on the card is " + annesCard.balance() + " euros");
-        System.out.println(unicafeExactum);
-
-        unicafeExactum.addMoneyToCard(annesCard, 100);
-        System.out.println("amount of money on the card is " + annesCard.balance() + " euros");
-        System.out.println(unicafeExactum);
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = nwq Scanner (System.in);
+        boolean isProgramRunning = true;
+        System.out.println("Welcome to person manager, type \"help\" to see available commands.");
+    
+    while (isProgramRunning) {
+        String command = scanner.nextLine();
+        
+        if (command.equals("exit")) {
+            System.out.println("Thanks, bye bye!");
+            isProgramRunning = false;
+        }else if (command.equals("show")) {
+            
+        }
+    }
+    
     }
 }
 
