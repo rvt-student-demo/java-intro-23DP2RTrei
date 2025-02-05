@@ -2,22 +2,33 @@ package lv.rvt;
 
 public class Main {
     public static void main(String[] args) {
-        // Personas dati
-        String[] names = {"Jack", "Peter", "John"};
-        int[] ages = {12, 13, 14};
-        double[] weights = {40.5, 50.0, 60.0}; // kg
-        double[] heights = {1.50, 1.60, 1.70}; // m
-        
-        // Tabulas galvene
-        System.out.printf("| %-10s | %-3s | %-6s | %-6s | %-5s |\n", "Name", "Age", "Weight", "Height", "BMI");
-        System.out.println("-------------------------------------------------");
-        
-        // Aprēķināt un izvadīt katras personas datus
-        for (int i = 0; i < names.length; i++) {
-            double bmi = weights[i] / (heights[i] * heights[i]);
-            System.out.printf("| %-10s | %-3d | %-6.1f | %-6.2f | %-5.2f |\n",
-                            names[i], ages[i], weights[i], heights[i], bmi);
+        SimpleDate date = new SimpleDate(24, 3, 2017);
+        SimpleDate date2 = new SimpleDate(23, 7, 2017);
+
+        Person leo = new Person("Leo", date, 62, 9);
+        Person lily = new Person("Lily", date2, 65, 8);
+
+        // 1. Pārbaude: dažādi cilvēki
+        if (leo.equals(lily)) {
+            System.out.println("Leo and Lily are identical!");
+        } else {
+            System.out.println("Leo and Lily are NOT identical.");
         }
-        System.out.println("-------------------------------------------------");
+
+        // 2. Pārbaude: Leo ar dažādu svaru
+        Person leoWithDifferentWeight = new Person("Leo", date, 62, 10);
+        if (leo.equals(leoWithDifferentWeight)) {
+            System.out.println("Leo with different weight is identical!");
+        } else {
+            System.out.println("Leo with different weight is NOT identical.");
+        }
+
+        // 3. Pārbaude: Alternatīvais konstruktors
+        Person testPerson = new Person("Leo", 24, 3, 2017, 62, 9);
+        if (leo.equals(testPerson)) {
+            System.out.println("Alternative constructor works correctly.");
+        } else {
+            System.out.println("Alternative constructor has issues.");
+        }
     }
 }

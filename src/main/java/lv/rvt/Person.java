@@ -1,44 +1,33 @@
 package lv.rvt;
 
 public class Person {
-            private String name;
-    private int age;
-    private int weight;
+    private String name;
+    private SimpleDate birthday;
     private int height;
+    private int weight;
 
-    public Person(String name, int age, int weight, int height) {
+    public Person(String name, SimpleDate birthday, int height, int weight) {
         this.name = name;
-        this.age = age;
-        this.weight = weight;
+        this.birthday = birthday;
         this.height = height;
-    }    
-    public void setHeight(int newHeight) {
-        this.height = newHeight;
+        this.weight = weight;
     }
 
-    public void setWeight(int newWeight) {
-        this.weight = newWeight;
+    public Person(String name, int day, int month, int year, int height, int weight) {
+        this.name = name;
+        this.birthday = new SimpleDate(day, month, year);
+        this.height = height;
+        this.weight = weight;
     }
 
-    public double bodyMassIndex() {
-        double heigthPerHundred = this.height / 100.0;
-        return this.weight / (heigthPerHundred * heigthPerHundred);
+    @Override
+    public boolean equals(Object compared) {
+        if (this == compared) return true;
+        if (!(compared instanceof Person)) return false;
+        Person that = (Person) compared;
+        return name.equals(that.name) &&
+            birthday.equals(that.birthday) &&
+            height == that.height &&
+            weight == that.weight;
     }
-    public String getName() {
-        return this.name;
-    }
-    public int getAge() {
-        return this.age;
-    }
-    
-    public int getWeight() {
-        return this.weight;
-    }
-    
-    public int getHeight() {
-        return this.height;
-    }
-    
-        
 }
-
