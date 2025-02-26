@@ -1,4 +1,4 @@
-package lv;
+package lv.rvt;
 
 class ProductWarehouseWithHistory extends ProductWarehouse {
     private ChangeHistory history;

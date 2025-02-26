@@ -1,6 +1,6 @@
 package lv.rvt;
 
-class ProductWarehouse extends Warehouse {
+public class ProductWarehouse extends Warehouse {
     private String productName;
 
     public ProductWarehouse(String productName, double capacity) {

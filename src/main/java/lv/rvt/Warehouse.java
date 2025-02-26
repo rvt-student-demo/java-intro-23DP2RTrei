@@ -1,6 +1,6 @@
 package lv.rvt;
 
-class Warehouse {
+public class Warehouse {
     private double capacity;
     private double balance;
 

@@ -20,6 +20,10 @@ public class Person {
         this.weight = weight;
     }
 
+    public Person(String name2, int age, int weight2, int height2, String address) {
+        //TODO Auto-generated constructor stub
+    }
+
     @Override
     public boolean equals(Object compared) {
         if (this == compared) return true;
@@ -29,5 +33,10 @@ public class Person {
             birthday.equals(that.birthday) &&
             height == that.height &&
             weight == that.weight;
+    }
+
+    public char[] toCsvRow() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'toCsvRow'");
     }
 }

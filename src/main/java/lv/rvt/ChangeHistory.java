@@ -2,7 +2,7 @@ package lv.rvt;
 
 import java.util.ArrayList;
 
-class ChangeHistory {
+public class ChangeHistory {
     private ArrayList<Double> history;
 
     public ChangeHistory() {
